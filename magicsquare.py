@@ -31,14 +31,12 @@ def is_valid(board, n):
     anti_diagonal = [board[i][len(board)-i-1] for i in range(len(board))]
 
     for i in range(n):
-        if 0 not in board[i]:
-            if sum(board[i])!=magic_constant:
-                return False
+        if 0 not in board[i] and sum(board[i])!=magic_constant:
+            return False
     
     for i in range(n):
-        if 0 not in columns[i]:
-            if sum(columns[i]) !=magic_constant:
-                return False
+        if 0 not in columns[i] and sum(columns[i]) !=magic_constant:
+            return False
     
     if 0 not in diagonal:
         if sum(diagonal) != magic_constant:
@@ -46,7 +44,6 @@ def is_valid(board, n):
 
     if 0 not in anti_diagonal:
         if sum(anti_diagonal) != magic_constant:
-
             return False
     
     
